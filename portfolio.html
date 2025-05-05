@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ff6b6b;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #ffdd57;
+    }
+
+    .hero button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      background: white;
+      color: #2575fc;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #f1f1f1;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2575fc;
+    }
+
+    .profile-info {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff6b6b;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .project-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card ul {
+      padding-left: 1rem;
+    }
+
+    details summary {
+      font-size: 1.25rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: #2575fc;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      width: fit-content;
+      margin: 0 auto 1rem auto;
+    }
+
+    details[open] summary {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form input,
+    form textarea {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      padding: 0.75rem;
+      background: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #1a5cd8;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hello, I'm <span class="highlight">Ajithkumar</span></h1>
+    <p>A passionate web developer.</p>
+    <button onclick="scrollToSection('projects')">View My Work</button>
+  </section>
+
+  <section class="profile section">
+    <h2>My Profile</h2>
+    <div class="profile-container">
+      <img src="ajithkumarprofile.jpg" alt="Profile Photo" class="profile-pic" />
+      <div class="profile-info">
+        <p>Hello! I'm <strong>Ajithkumar</strong>, a dedicated web developer specializing in front-end design. I enjoy turning complex problems into simple, beautiful solutions.</p>
+        <div class="social-links">
+          <a href="https://github.com/Ajithkumar1192000" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/ajith-kumar-76721b222/" target="_blank">LinkedIn</a>
+          <a href="AjithkumarCV.pdf" target="_blank">Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div style="max-width: 700px; margin: 1rem auto; font-size: 1.1rem;">
+      <p>
+        I specialize in crafting fast, responsive, and user-friendly websites using HTML, CSS, JavaScript, React.js, Bootstrap, and MySQL.
+        I’m experienced in Linux environments and passionate about performance and bug-free interfaces.
+      </p>
+    </div>
+  </section>
+  
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Switch Africa Banking – Kloud Portal</h3>
+        <p><strong>Client:</strong> Switch Africa</p>
+        <p><strong>Role:</strong> Bug Fixing Operator (Mar 2024 – Aug 2024)</p>
+        <ul>
+          <li>Investigated and resolved system bugs, crashes, and UI issues</li>
+          <li>Applied patches and ensured system stability without regressions</li>
+          <li>Collaborated with team to follow coding standards and QA processes</li>
+          <li>Optimized frontend performance and responsiveness</li>
+          <li>Regularly documented issues and reported status updates</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <h3>Website Deployment Using Docker</h3>
+        <ul>
+          <li>Created a responsive website using HTML, CSS, Bootstrap, and JS</li>
+          <li>Hosted all project files in a GitHub repository</li>
+          <li>Containerized the application with Docker</li>
+          <li>Converted the container to an image and pushed it to Docker Hub</li>
+          <li>https://github.com/Ajithkumar1192000/Nginx_server</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <h3>Ecommerce Website with Cart Function (ReactJS)</h3>
+        <ul>
+          <li>Created login, signup with validation</li>
+          <li>Built product listing, cart, and profile features using React and useContext</li>
+          <li>Implemented local storage for user and feedback data</li>
+          <li>Displayed total cost of cart dynamically</li>
+          <li>https://github.com/Ajithkumar1192000/shoppingcart_react</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <details>
+      <summary>View Contact Me</summary>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </details>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ajithkumar . All rights reserved.</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
